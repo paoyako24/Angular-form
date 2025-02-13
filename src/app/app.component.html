@@ -1,0 +1,10 @@
+<div>
+  @let items = form.controls.items.controls;
+  <button (click)="addIten()">Add Item</button>
+
+  @for (formGroup of items; track formGroup.controls.id.value) {
+    <app-form-child [formGroup]="formGroup" />
+  }
+
+  <h3>Total value: {{ totalValue() }}</h3>
+</div>
